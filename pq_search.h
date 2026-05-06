@@ -34,7 +34,7 @@ inline float dot_neon(const float* __restrict__ a,
     return res;
 }
 
-// NEON L2 距离平方：仅用于 K-Means 聚类
+// NEON L2 距离平方
 inline float l2sq_neon(const float* __restrict__ a,
                        const float* __restrict__ b,
                        size_t dim) {
@@ -58,7 +58,7 @@ inline float l2sq_neon(const float* __restrict__ a,
     return res;
 }
 
-// K-Means：训练和编码都用 L2（标准 PQ）
+// K-Means
 static void kmeans(const float* data, size_t n, size_t dsub,
                    size_t Ks, int max_iter, float* centers) {
     std::mt19937 rng(42);
